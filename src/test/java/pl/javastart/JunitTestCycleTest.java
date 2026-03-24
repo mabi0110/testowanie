@@ -1,24 +1,43 @@
 package pl.javastart;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
+
+import java.util.Random;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class JunitTestCycleTest {
 
-    private int counter;
+    private final Random random = new Random();
+
+    @BeforeAll
+    public static void beforeAll() {
+        System.out.println("before all");
+    }
+
+    @AfterAll
+    public static void afterAll() {
+        System.out.println("after all");
+    }
+
+    @BeforeEach
+    public void beforeEach() {
+        System.out.println("before each");
+    }
+
+    @AfterEach
+    public void afterEach() {
+        System.out.println("after each");
+    }
 
     @Test
     public void test1() {
-        counter++;
-        System.out.println("Test 1: " + this);
-        System.out.println(counter);
+        System.out.println(random.nextInt());
+        System.out.println(random);
     }
 
     @Test
     public void test2() {
-        counter++;
-        System.out.println("Test 2: " + this);
-        System.out.println(counter);
+        System.out.println(random.nextInt());
+        System.out.println(random);
     }
 }
