@@ -1,15 +1,22 @@
 package pl.javastart;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalendarTest {
 
-    private final Calendar calendar = new Calendar();
+    private Calendar calendar;
 
+    @BeforeEach
+    public void init() {
+        calendar = new Calendar();
+    }
 
+    @DisplayName("2018 June -> 30")
     @Test
     public void shouldReturn30WhenYear2018AndMonth6() {
         // given
@@ -23,6 +30,7 @@ class CalendarTest {
         Assertions.assertEquals(30, result);
     }
 
+    @DisplayName("2018 July -> 31")
     @Test
     public void shouldReturn31WhenYear2018AndMonth7() {
         // given
@@ -36,6 +44,7 @@ class CalendarTest {
         Assertions.assertEquals(31, result);
     }
 
+    @DisplayName("2018 August -> 31")
     @Test
     public void shouldReturn31WhenYear2018AndMonth8() {
         // given
@@ -49,6 +58,7 @@ class CalendarTest {
         Assertions.assertEquals(31, result);
     }
 
+    @DisplayName("2018 February -> 28")
     @Test
     public void shouldReturn28WhenYear2018AndMonth2() {
         // given
@@ -62,6 +72,7 @@ class CalendarTest {
         Assertions.assertEquals(28, result);
     }
 
+    @DisplayName("2016 February -> 29")
     @Test
     public void shouldReturn29WhenYear2016AndMonth2() {
         // given
@@ -75,6 +86,7 @@ class CalendarTest {
         Assertions.assertEquals(29, result);
     }
 
+    @DisplayName("2010 February -> 28")
     @Test
     public void shouldReturn28WhenYear2010AndMonth2() {
         // given
@@ -88,6 +100,7 @@ class CalendarTest {
         Assertions.assertEquals(28, result);
     }
 
+    @DisplayName("2100 February -> 28")
     @Test
     public void shouldReturn28WhenYear2100AndMonth2() {
         // given
@@ -101,6 +114,7 @@ class CalendarTest {
         Assertions.assertEquals(28, result);
     }
 
+    @DisplayName("2000 February -> 29")
     @Test
     public void shouldReturn29WhenYear2000AndMonth2() {
         // given
