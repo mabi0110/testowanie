@@ -8,10 +8,22 @@ public class AssertionsTest {
     @Test
     public void test() {
 
+        long start = System.currentTimeMillis();
+
         String expected = "a";
         String actual = "b";
 
-        Assertions.assertEquals(expected, actual, "Wartosci nie sa rowne");
+        Assertions.assertEquals(expected, actual, createMessage());
+        System.out.println("Duration: " + (System.currentTimeMillis() - start));
 
+    }
+
+    private String createMessage() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return "Values are not equal";
     }
 }
