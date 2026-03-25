@@ -11,9 +11,9 @@ public class AssertionsTest {
         long start = System.currentTimeMillis();
 
         String expected = "a";
-        String actual = "b";
+        String actual = "a";
 
-        Assertions.assertEquals(expected, actual, createMessage());
+        Assertions.assertEquals(expected, actual, this::createMessage);
         System.out.println("Duration: " + (System.currentTimeMillis() - start));
 
     }
