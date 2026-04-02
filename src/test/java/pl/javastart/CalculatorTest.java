@@ -1,9 +1,8 @@
 package pl.javastart;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CalculatorTest {
 
@@ -18,7 +17,7 @@ class CalculatorTest {
         int result = calculator.add(a, b);
 
         // then
-        Assertions.assertEquals(12, result);
+        assertEquals(12, result);
     }
 
 }
