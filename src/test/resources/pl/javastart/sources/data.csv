@@ -1,0 +1,5 @@
+status, expected status
+nowe, NEW
+zaakceptowane, APPROVED
+opłacone, PAID
+anulowane, CANCELED
